@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/mobile/bg-image-daytime.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 26px;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+}
+
+.container--main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.quote--wrapper {
+  margin-top: 32px;
+  display: flex;
+  align-items: flex-start;
+  .quote {
+    font-size: 12px;
+    line-height: 22px;
+    margin-right: 40px;
+    .quote--author {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+  }
+  .refresh {
+    position: fixed;
+    right: 26px;
+    transition: 300ms transform ease-out;
+
+    &:active {
+      transform: scale(0.6);
+    }
+  }
+}
+
+.clock--wrapper {
+  padding-top: 41px;
+  position: relative;
+  .good {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    p {
+      font-size: 15px;
+      line-height: 25px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-left: 16px;
+      position: relative;
+    }
+  }
+  #morning {
+    opacity: 1;
+  }
+  #evening {
+    opacity: 0;
+  }
+
+  .clock {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    p {
+      font-weight: bold;
+      font-size: 100px;
+      line-height: 100px;
+    }
+    span {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 28px;
+    }
+    margin-bottom: 16px;
+  }
+
+  .city {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 28px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+}
+
+.more {
+  margin-top: 51px;
+  margin-bottom: 40px;
+  width: 115px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #fff;
+  border-radius: 28px;
+  padding: 4px;
+  position: relative;
+  p {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(30%, -50%);
+    color: #000000;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3.75px;
+    line-height: 14px;
+    position: absolute;
+  }
+  img {
+    width: 32px;
+    transform: rotate(180deg);
+    transition: transform 300ms ease-out;
+  }
+  #more {
+    opacity: 0.5;
+  }
+  #less {
+    opacity: 0;
+  }
+}
+
+.desc {
+  color: #303030;
+  position: relative;
+  overflow: hidden;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  table {
+    display: block;
+    tbody {
+      display: block;
+    }
+    tr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    th {
+      padding: 8px;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 28px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    td {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: right;
+    }
+  }
+}
+
+.desc:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.75);
+  filter: blur(5px);
+  transform: scale(1.5);
+  z-index: -1;
+}
+
+.app {
+  transform: translateY(0);
+  transition: transform 300ms ease-out;
+}
+
+.app.show-desc {
+  transform: translateY(0);
+}
+
+.app.show-desc {
+  .more {
+    img {
+      transform: rotate(0);
+    }
+    #less {
+      opacity: 0.5;
+    }
+    #more {
+      opacity: 0;
+    }
+  }
+}
+
+.night {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/mobile/bg-image-nighttime.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  .clock--wrapper .good#evening {
+    opacity: 1;
+  }
+  .clock--wrapper .good#morning {
+    opacity: 0;
+  }
+  .desc {
+    color: #fff;
+  }
+  .desc:before {
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/tablet/bg-image-daytime.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .quote--wrapper {
+    .quote {
+      font-size: 18px;
+      line-height: 28px;
+      .quote--author {
+        margin-top: 13px;
+      }
+    }
+  }
+
+  .night {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/tablet/bg-image-nighttime.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media screen and(min-width: 800px) {
+  body {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/desktop/bg-image-daytime.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container {
+    margin: 0 165px;
+  }
+  .night {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/desktop/bg-image-nighttime.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

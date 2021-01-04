@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <title>Frontend Mentor | Clock App</title>
+  </head>
+  <body class=''>
+
+    <section class="app" id="app">
+    <div class="container container--main">
+      <div class="quote--wrapper">
+        <div class="quote">
+          <p id="quote">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ullam deserunt pariatur mollitia minima
+            sequi cum. Aliquid ratione placeat blanditiis!
+          </p>
+          <p class="quote--author" id="author">Author</p>
+        </div>
+        <button class="refresh" id="refresh">
+          <img src="./assets/desktop/icon-refresh.svg" alt="refresh" />
+        </button>
+      </div>
+
+      <main>
+      <div class="clock--wrapper">
+        <div class="good" id="morning">
+          <img src="./assets/desktop/icon-sun.svg" alt="sun" />
+          <p>Good Morning</p>
+        </div>
+        <div class="good" id="evening">
+          <img src="./assets/desktop/icon-moon.svg" alt="moon" />
+          <p>Good Evening</p>
+        </div>
+
+        <div class="clock">
+          <p id="clock">11:37 </p>
+          <span>BST</span>
+        </div>
+
+        <div class="city">
+          <p>In London, UK</p>
+        </div>
+      </div>
+
+      <button class="more" id="btn-more">
+        <p id="more">More</p>
+        <p id="less">Less</p>
+        <img src="./assets/desktop/icon-arrow-up.svg" alt="down" />
+      </button>
+    </div>
+    </main>
+
+    <div class="desc" id="desc">
+      <div class="container">
+        <table>
+          <tr>
+            <th>Current Timezone</th>
+            <td>Europe/london</td>
+          </tr>
+          <tr>
+            <th>Day of the year</th>
+            <td>295</td>
+          </tr>
+          <tr>
+            <th>Day of the week</th>
+            <td>5</td>
+          </tr>
+          <tr>
+            <th>Week number</th>
+            <td>42</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>
